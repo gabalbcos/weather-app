@@ -1,11 +1,15 @@
 * {
     box-sizing: border-box;
     --background-color: rgb(206, 228, 235);
+    --display-button: rgb(219, 219, 219);
+    --display-button-border: rgb(138, 136, 136);
 }
 
 body {
     background-color: var(--background-color);
 }
+
+/* search bar*/
 
 header {
     display: flex;
@@ -25,4 +29,42 @@ header {
     border: none;
     height: 25px;
     text-align: center; 
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+/* main content */
+main {
+    display: flex;
+    border: 2px solid red;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 2px solid blue;
+    padding: 15px;
+    align-items: center;
+}
+
+.content > * {margin: 0;}
+
+#today-date, #time, #change-unity {
+    font-size: 12px;
+}
+
+#temperature {
+    font-size: 30px;
+}
+
+#change-unity {
+    border: 1px solid var(--display-button-border);
+    border-radius: 15px;
+    width: 50%;
+    text-align: center;
+    background-color: var(--display-button);
 }
