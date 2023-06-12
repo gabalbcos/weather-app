@@ -24,6 +24,23 @@ header {
     align-items: center;
 }
 
+.search-box-info {
+    position: relative;
+}
+
+.search-box-info > i {
+    font-size: 12px;
+    position: absolute;
+    top: 32%;
+    right: 8%;
+}
+
+.search-box-info > i:hover{
+    cursor: pointer;
+}
+
+
+
 #search {
     border-radius: 15px;
     border: none;
