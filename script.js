@@ -66,11 +66,11 @@ function setTemperature(temperature) {
 function changeTemperatureUnity() {
     if (temperatureUnity === "c") {
         temperatureUnity = "f";
-        changeUnity.innerText = "Display Cº";
+        changeUnity.innerText = "Display F";
     }
     else {
         temperatureUnity = "c";
-        changeUnity.innerText = "Display F";
+        changeUnity.innerText = "Display Cº";
     }
 }
 
