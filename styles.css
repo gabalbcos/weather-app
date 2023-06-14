@@ -68,16 +68,26 @@ main {
 }
 
 .content {
+    margin: 0 auto;
+    width: 350px;
+    height: 450px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-around;
     padding: 15px;
     align-items: center;
     border-radius: 10px;
     background-color: var(--main-card);
 }
 
-.content > * {margin: 0;}
+.content * {
+margin: 0 0 12px 0;
+}
+
+#city-name {
+    margin-bottom: 0;
+}
+
 
 #today-date, #time, #change-unity {
     font-size: 12px;
@@ -89,8 +99,9 @@ main {
 
 #change-unity {
     border: 1px solid var(--display-button-border);
+    display: inline-block;
     border-radius: 15px;
-    width: 50%;
+    width: 70px;
     text-align: center;
     background-color: var(--display-button);
 }

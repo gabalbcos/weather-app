@@ -3,6 +3,7 @@ const searchBox = document.getElementById("search");
 const errorMsg = document.querySelector(".error-message");
 const submitSearch = document.getElementById("search-button");
 const cityName = document.getElementById("city-name");
+const countryName = document.getElementById("country-name")
 const todayDate = document.getElementById("today-date");
 const todayTime = document.getElementById("time");
 const temperature = document.getElementById("temperature");
@@ -31,6 +32,7 @@ const updateWeather = async () => {
 // dom functions
 function setCityData(data) {
     cityName.innerText = data.location.name;
+    countryName.innerText = data.location.country;
     const cityLocalTime = data["location"]["localtime"];
     let cityLocalTimeHour = cityLocalTime.split(" ");
     todayDate.innerText = formatDate(cityLocalTimeHour[0])
@@ -49,7 +51,6 @@ function formatDate(date) {
 // global variables
 let temperatureUnity = "f";
 
-
 function setTemperature(temperature) {
     if (temperatureUnity === "c") {
         temperatureUnity = "f";
@@ -62,8 +63,6 @@ function setTemperature(temperature) {
         changeUnity.innerText = "Display F";
         return `${temperature["current"]['temp_c']}Cº`;
     }
-
-
 }
 
 //submit search
