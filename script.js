@@ -2,6 +2,7 @@
 const searchBox = document.getElementById("search");
 const errorMsg = document.querySelector(".error-message");
 const submitSearch = document.getElementById("search-button");
+const weatherIcon = document.getElementById("weather-icon");
 const cityName = document.getElementById("city-name");
 const countryName = document.getElementById("country-name")
 const todayDate = document.getElementById("today-date");
@@ -31,6 +32,8 @@ const updateWeather = async () => {
 
 // dom functions
 function setCityData(data) {
+    
+    weatherIcon.setAttribute("src", `${data.current.condition.icon}`);
     cityName.innerText = data.location.name;
     countryName.innerText = data.location.country;
     const cityLocalTime = data["location"]["localtime"];
