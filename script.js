@@ -56,23 +56,34 @@ let temperatureUnity = "f";
 
 function setTemperature(temperature) {
     if (temperatureUnity === "c") {
-        temperatureUnity = "f";
-        changeUnity.innerText = "Display Cº";
         return `${temperature["current"]['temp_f']}F`
     }
     else {
-        temperatureUnity = "c";
-        console.log(temperatureUnity);
-        changeUnity.innerText = "Display F";
         return `${temperature["current"]['temp_c']}Cº`;
     }
 }
 
-//submit search
+function changeTemperatureUnity() {
+    if (temperatureUnity === "c") {
+        temperatureUnity = "f";
+        changeUnity.innerText = "Display Cº";
+    }
+    else {
+        temperatureUnity = "c";
+        changeUnity.innerText = "Display F";
+    }
+}
+
+// submit search
 submitSearch.addEventListener("click", 
 updateWeather)
 
 changeUnity.addEventListener("click", 
-updateWeather)
+() => {
+    changeTemperatureUnity();
+    updateWeather();
+})
 
-getWeather("Buenos Aires")
+// initial
+searchBox.value = 'Buenos Aires';
+updateWeather();
